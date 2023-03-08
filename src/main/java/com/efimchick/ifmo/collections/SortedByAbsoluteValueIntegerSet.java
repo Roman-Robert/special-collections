@@ -4,7 +4,6 @@ import java.util.*;
 
 class SortedByAbsoluteValueIntegerSet implements Set<Integer>{
 
-
     private final Set<Integer> set = new TreeSet<>(Comparator.comparingInt(Math::abs));
 
     @Override
@@ -39,12 +38,12 @@ class SortedByAbsoluteValueIntegerSet implements Set<Integer>{
 
     @Override
     public boolean add(Integer integer) {
-        return false;
+        return set.add(integer);
     }
 
     @Override
     public boolean remove(Object o) {
-        return false;
+        return set.remove(o);
     }
 
     @Override
@@ -54,7 +53,7 @@ class SortedByAbsoluteValueIntegerSet implements Set<Integer>{
 
     @Override
     public boolean addAll(Collection<? extends Integer> c) {
-        return false;
+        return set.addAll(c);
     }
 
     @Override
