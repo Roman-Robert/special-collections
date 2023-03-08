@@ -1,42 +1,40 @@
 package com.efimchick.ifmo.collections;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
-class SortedByAbsoluteValueIntegerSet implements Set<Integer> {
+class SortedByAbsoluteValueIntegerSet implements Set<Integer>{
 
-    private Set<Integer> set = new HashSet<>();
+
+    private final Set<Integer> set = new TreeSet<>(Comparator.comparingInt(Math::abs));
 
     @Override
     public int size() {
-        return 0;
+        return set.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return set.isEmpty();
     }
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        return set.contains(o);
     }
 
     @Override
     public Iterator<Integer> iterator() {
-        return null;
+        return set.iterator();
     }
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        return set.toArray();
     }
 
     @Override
     public <T> T[] toArray(T[] a) {
-        return null;
+        return set.toArray(a);
     }
 
     @Override
@@ -51,7 +49,7 @@ class SortedByAbsoluteValueIntegerSet implements Set<Integer> {
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        return set.containsAll(c);
     }
 
     @Override
@@ -61,16 +59,16 @@ class SortedByAbsoluteValueIntegerSet implements Set<Integer> {
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return false;
+        return set.retainAll(c);
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        return false;
+        return set.removeAll(c);
     }
 
     @Override
     public void clear() {
-
+        set.clear();
     }
 }
